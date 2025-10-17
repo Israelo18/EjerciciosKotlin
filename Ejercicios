@@ -32,8 +32,7 @@ fun hacerMcd(a: Int, b: Int): Int {
     return mcd
 }
 
-// 3. Función que devuelve el mínimo común múltiplo de dos
-enteros
+// 3. Función que devuelve el mínimo común múltiplo de dos enteros
 fun hacerMcm(a: Int, b: Int): Int {
     val mcm = (a*b)/hacerMcd(a,b)
     return mcm
@@ -48,8 +47,7 @@ fun esPrimo(n: Int): Boolean {
     return true
 }
 
-// 5. Función que devuelve tantos números primos como se indique
-en un parámetro entero
+// 5. Función que devuelve tantos números primos como se indique en un parámetro entero
 fun primerosPrimos(cantidad: Int): List<Int> {
     val primos = mutableListOf<Int>()
     var numero = 2
@@ -62,8 +60,7 @@ fun primerosPrimos(cantidad: Int): List<Int> {
     return primos
 }
 
-// 6. Función que realiza la descomposición en factores primos de
-un número entero devolviendo una lista de números primos
+// 6. Función que realiza la descomposición en factores primos de un número entero devolviendo una lista de números primos
 fun factoresPrimosLista(n: Int): List<Int> {
     var numero = n
     val factores = mutableListOf<Int>()
@@ -78,14 +75,12 @@ fun factoresPrimosLista(n: Int): List<Int> {
     return factores
 }
 
-// 7. Función que realiza la descomposición en factores primos de
-un número entero devolviendo un array de números primos
+// 7. Función que realiza la descomposición en factores primos de un número entero devolviendo un array de números primos
 fun factoresPrimosArray(n: Int): IntArray {
     return factoresPrimosLista(n).toIntArray()
 }
 
-// 8. Función que indica si un número es igual a la suma de sus
-dígitos elevados a la cantidad de dígitos
+// 8. Función que indica si un número es igual a la suma de sus dígitos elevados a la cantidad de dígitos
 fun sumaDigitosElevados(n: Int): Boolean {
     val digitos = n.toString().map { it.toString().toInt() }
     val suma = digitos.sumOf { Math.pow(it.toDouble(), digitos.size.toDouble()).toInt() }
