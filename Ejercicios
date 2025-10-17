@@ -1,12 +1,12 @@
 fun main() {
-    println(hacerFactorial(5))                      // 120
-    println(hacerMcd(18, 24))                       // 6
-    println(hacerMcm(4, 6))                         // 12
-    println(esPrimo(17))                       // true
-    println(primerosPrimos(5))                 // [2, 3, 5, 7, 11]
-    println(factoresPrimosLista(60))           // [2, 2, 3, 5]
+    println(hacerFactorial(5))                          // 120
+    println(hacerMcd(18, 24))                           // 6
+    println(hacerMcm(4, 6))                             // 12
+    println(esPrimo(17))                                // true
+    println(primerosPrimos(5))                          // [2, 3, 5, 7, 11]
+    println(factoresPrimosLista(60))                    // [2, 2, 3, 5]
     println(factoresPrimosArray(60).contentToString())  // [2, 2, 3, 5]
-    println(sumaDigitosElevados(153))            // true
+    println(sumaDigitosElevados(153))                   // true
 }
 
 // 1. Función que devuelve el factorial de un entero
