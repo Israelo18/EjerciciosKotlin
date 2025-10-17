@@ -1,0 +1,83 @@
+fun main() {
+    println(hacerFactorial(5))                      // 120
+    println(hacerMcd(18, 24))                       // 6
+    println(hacerMcm(4, 6))                         // 12
+    println(esPrimo(17))                       // true
+    println(primerosPrimos(5))                 // [2, 3, 5, 7, 11]
+    println(factoresPrimosLista(60))           // [2, 2, 3, 5]
+    println(factoresPrimosArray(60).contentToString())  // [2, 2, 3, 5]
+    println(sumaDigitosElevados(153))            // true
+}
+
+
+fun hacerFactorial(numero: Int): Int {
+    var factorial = 1
+    for (i in 1..numero) {
+        factorial *= i
+        println(factorial)
+    }
+    return factorial
+}
+
+fun hacerMcd(a: Int, b: Int): Int {
+    var mcd = 1
+    if (a == 0|| b == 0) return 0
+    val max = if (a > b) a else b
+    for (i in 2..max) {
+        if (a % i == 0 && b % i == 0) {
+            mcd = i
+        }
+    }
+    return mcd
+}
+
+
+fun hacerMcm(a: Int, b: Int): Int {
+    val mcm = (a*b)/hacerMcd(a,b)
+    return mcm
+}
+
+
+fun esPrimo(n: Int): Boolean {
+    if (n < 2) return false
+    for (i in 2..Math.sqrt(n.toDouble()).toInt()) {
+        if (n % i == 0) return false
+    }
+    return true
+}
+
+fun primerosPrimos(cantidad: Int): List<Int> {
+    val primos = mutableListOf<Int>()
+    var numero = 2
+    while (primos.size < cantidad) {
+        if (esPrimo(numero)) {
+            primos.add(numero)
+        }
+        numero++
+    }
+    return primos
+}
+
+fun factoresPrimosLista(n: Int): List<Int> {
+    var numero = n
+    val factores = mutableListOf<Int>()
+    var divisor = 2
+    while (numero > 1) {
+        while (numero % divisor == 0) {
+            factores.add(divisor)
+            numero /= divisor
+        }
+        divisor++
+    }
+    return factores
+}
+
+fun factoresPrimosArray(n: Int): IntArray {
+    return factoresPrimosLista(n).toIntArray()
+}
+
+fun sumaDigitosElevados(n: Int): Boolean {
+    val digitos = n.toString().map { it.toString().toInt() }
+    val suma = digitos.sumOf { Math.pow(it.toDouble(), digitos.size.toDouble()).toInt() }
+    return suma == n
+}
