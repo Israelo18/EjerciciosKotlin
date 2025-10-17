@@ -19,6 +19,7 @@ fun hacerFactorial(numero: Int): Int {
     return factorial
 }
 
+
 fun hacerMcd(a: Int, b: Int): Int {
     var mcd = 1
     if (a == 0|| b == 0) return 0
@@ -46,6 +47,7 @@ fun esPrimo(n: Int): Boolean {
     return true
 }
 
+
 fun primerosPrimos(cantidad: Int): List<Int> {
     val primos = mutableListOf<Int>()
     var numero = 2
@@ -57,6 +59,7 @@ fun primerosPrimos(cantidad: Int): List<Int> {
     }
     return primos
 }
+
 
 fun factoresPrimosLista(n: Int): List<Int> {
     var numero = n
@@ -72,9 +75,11 @@ fun factoresPrimosLista(n: Int): List<Int> {
     return factores
 }
 
+
 fun factoresPrimosArray(n: Int): IntArray {
     return factoresPrimosLista(n).toIntArray()
 }
+
 
 fun sumaDigitosElevados(n: Int): Boolean {
     val digitos = n.toString().map { it.toString().toInt() }
