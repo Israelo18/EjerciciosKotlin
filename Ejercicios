@@ -9,7 +9,7 @@ fun main() {
     println(sumaDigitosElevados(153))            // true
 }
 
-
+// 1. Función que devuelve el factorial de un entero
 fun hacerFactorial(numero: Int): Int {
     var factorial = 1
     for (i in 1..numero) {
@@ -19,7 +19,7 @@ fun hacerFactorial(numero: Int): Int {
     return factorial
 }
 
-
+// 2. Función que devuelve el máximo común divisor de dos enteros
 fun hacerMcd(a: Int, b: Int): Int {
     var mcd = 1
     if (a == 0|| b == 0) return 0
@@ -32,13 +32,14 @@ fun hacerMcd(a: Int, b: Int): Int {
     return mcd
 }
 
-
+// 3. Función que devuelve el mínimo común múltiplo de dos
+enteros
 fun hacerMcm(a: Int, b: Int): Int {
     val mcm = (a*b)/hacerMcd(a,b)
     return mcm
 }
 
-
+// 4. Función que devuelve si un entero es primo o no
 fun esPrimo(n: Int): Boolean {
     if (n < 2) return false
     for (i in 2..Math.sqrt(n.toDouble()).toInt()) {
@@ -47,7 +48,8 @@ fun esPrimo(n: Int): Boolean {
     return true
 }
 
-
+// 5. Función que devuelve tantos números primos como se indique
+en un parámetro entero
 fun primerosPrimos(cantidad: Int): List<Int> {
     val primos = mutableListOf<Int>()
     var numero = 2
@@ -60,7 +62,8 @@ fun primerosPrimos(cantidad: Int): List<Int> {
     return primos
 }
 
-
+// 6. Función que realiza la descomposición en factores primos de
+un número entero devolviendo una lista de números primos
 fun factoresPrimosLista(n: Int): List<Int> {
     var numero = n
     val factores = mutableListOf<Int>()
@@ -75,12 +78,14 @@ fun factoresPrimosLista(n: Int): List<Int> {
     return factores
 }
 
-
+// 7. Función que realiza la descomposición en factores primos de
+un número entero devolviendo un array de números primos
 fun factoresPrimosArray(n: Int): IntArray {
     return factoresPrimosLista(n).toIntArray()
 }
 
-
+// 8. Función que indica si un número es igual a la suma de sus
+dígitos elevados a la cantidad de dígitos
 fun sumaDigitosElevados(n: Int): Boolean {
     val digitos = n.toString().map { it.toString().toInt() }
     val suma = digitos.sumOf { Math.pow(it.toDouble(), digitos.size.toDouble()).toInt() }
